@@ -9,7 +9,7 @@
   * Finally replace `{VIEW}` to either `grid` or `table`.
   
 ### OR
-* Download and copy all files to `/usr/share/apache2/directory-listing`
+* Download and copy `directory-listing` to `/usr/share/apache2/`
 * In `/etc/apache2/apache2.conf` add following at the bottom: 
 ````
 Alias "/directory-listing" "/usr/share/apache2/directory-listing"
