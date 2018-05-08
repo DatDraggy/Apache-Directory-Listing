@@ -19,6 +19,7 @@ allow from all
 </Directory>
 ````
 * Edit `/etc/apache2/mods-available/autoindex.conf` and put the AddIcon definitions from .htaccess below EXTENSION SPECIFIC ICONS. Example: `AddIcon /directory-listing/icons/code.svg .xml .code`
+* Enable the autoindex module: `a2enmod autoindex`
 
 # Themes
 The theme is included with two css files for grid(`grid.css`) and normal(`table.css`) for table styled indexing.
