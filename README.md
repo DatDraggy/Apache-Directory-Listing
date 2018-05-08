@@ -7,6 +7,18 @@
 * Open the `.htaccess` file and
   * Replace `{SOME_FOLDER}` to the location of `directory-listing` folder on your server.
   * Finally replace `{VIEW}` to either `grid` or `table`.
+  
+### OR
+* Download and copy all files to `/usr/share/apache2/directory-listing`
+* In `/etc/apache2/apache2.conf` add following at the bottom: 
+````
+Alias "/directory-listing" "/usr/share/apache2/directory-listing"
+<Directory /usr/share/apache2>
+Order allow,deny
+allow from all
+</Directory>
+````
+* Edit `/etc/apache2/mods-available/autoindex.conf` and put the AddIcon definitions from .htaccess below EXTENSION SPECIFIC ICONS. Example: `AddIcon /directory-listing/icons/code.svg .xml .code`
 
 # Themes
 The theme is included with two css files for grid(`grid.css`) and normal(`table.css`) for table styled indexing.
