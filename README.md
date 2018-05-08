@@ -1,24 +1,20 @@
 # Apache-Directory-Listing
 'Apache Directory Listing' is a theme inspired from [Apaxy](https://github.com/AdamWhitcroft/Apaxy) which uses Apache's `mod_autoindex` module.  
+Edited by DatDraggy for usage without .htaccess
 
 # Usage
-* Download or clone the repo and copy all the files of `directory-listing` folder to any folder in the server(root directory is highly preferred).
-* Copy the `.htaccess` file to the root directory of your server.
-* Open the `.htaccess` file and
-  * Replace `{SOME_FOLDER}` to the location of `directory-listing` folder on your server.
-  * Finally replace `{VIEW}` to either `grid` or `table`.
-  
-### OR
 * Download and copy `directory-listing` to `/usr/share/apache2/`
 * In `/etc/apache2/apache2.conf` add following at the bottom: 
 ````
 Alias "/directory-listing" "/usr/share/apache2/directory-listing"
-<Directory /usr/share/apache2>
-Order allow,deny
-allow from all
+<Directory /usr/share/apache2/directory-listing>
+  Options -Indexes
+  Order allow,deny
+  allow from all
 </Directory>
 ````
-* Edit `/etc/apache2/mods-available/autoindex.conf` and put the AddIcon definitions from .htaccess below EXTENSION SPECIFIC ICONS. Example: `AddIcon /directory-listing/icons/code.svg .xml .code`
+* This will tell apache that http://your-domain.com/directory-listing is where the browser can find the files to generate the listing and that it's accessible.
+* Take a look at the autoindex.conf file and either edit yours (`/etc/apache2/mods-available/autoindex.conf`) or replace it with this one.
 * Enable the autoindex module: `a2enmod autoindex`
 
 # Themes
