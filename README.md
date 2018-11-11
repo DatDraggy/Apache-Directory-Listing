@@ -20,7 +20,7 @@ Alias "/directory-listing" "/usr/share/apache2/directory-listing"
 # Themes
 The theme is included with two css files for grid(`grid.css`) and normal(`table.css`) for table styled indexing.
 
-Just change the `{VIEW}` in `.htaccess` to either `grid` or `table`.
+Just change the `IndexStyleSheet` in `autoindex.conf` to either `grid` or `table`.
 
 You can add your custom code in the `header.html` and `footer.html`.
 
